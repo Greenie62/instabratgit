@@ -32,7 +32,7 @@ const ImageGrid = (props) =>{
     return(
 
     <div className="image-div">
-    <img className="user-image" src={props.image} alt="image"/>
+    <img className="user-image" src={props.image} alt={props.image}/>
     <div className='stars'>
     <div onMouseEnter={highlightStar} value="0" className='star'><FaStar/></div>
     <div onMouseEnter={highlightStar} value="1" className='star'><FaStar/></div>
