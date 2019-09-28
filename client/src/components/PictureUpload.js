@@ -17,7 +17,7 @@ class PictureUpload extends Component{
 
         axios.post('/upload',formData,{
             headers:{
-                "Content-Type":"multipar/form-data"
+                "Content-Type":"multipart/form-data"
             }
         })
         .then(res=>{
