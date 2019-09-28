@@ -31,5 +31,9 @@ app.post('/upload',(req,res)=>{
   
 })
 
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+}
+
 
 app.listen(PORT,()=>console.log(`Logged onto port ${PORT}`))
