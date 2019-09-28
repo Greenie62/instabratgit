@@ -35,7 +35,7 @@ app.post('/upload',(req,res)=>{
         file.mv(path.join(__dirname, `client/public/assets/${file.name}`),(err)=>{
             if(err)throw err;
             else{
-                res.json({filename:file.name,filePath:`./assets/${file.name}`})
+                res.json({filename:file.name,filePath:`assets/${file.name}`})
             }
         })
     }
