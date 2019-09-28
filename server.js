@@ -9,6 +9,17 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 app.use(fileupload());
 
+
+
+if (process.env.NODE_ENV === 'production') {
+	app.use(express.static('client/build'));
+}
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
+
 app.get('/test',(req,res)=>{
     res.json({msg:"Testing FE/BE connection"})
 })
@@ -31,9 +42,7 @@ app.post('/upload',(req,res)=>{
   
 })
 
-if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
-}
+
 
 
 app.listen(PORT,()=>console.log(`Logged onto port ${PORT}`))
