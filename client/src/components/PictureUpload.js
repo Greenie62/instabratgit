@@ -30,6 +30,10 @@ class PictureUpload extends Component{
             console.log(image)
             this.props.addPicture(image)
         })
+        .catch(err=>{
+            console.log(err)
+            console.log("something is fucking up!")
+        })
 
     }
 
